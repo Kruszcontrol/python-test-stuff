@@ -1,0 +1,25 @@
+
+# Function to test for the first character in a string that repeats
+def repeatCheck(line):
+    x=""
+    for i in line:
+        x += i
+        if x.count(i) == 2:
+            return(i)
+        else:
+            i = "NA"
+    return(i)
+
+# Function to test for the first character in a string that does not repeat.
+def noRepeat(line):
+    x = line
+    for i in line:
+        if not line:
+            return("NA")
+        elif x.count(i) >= 2:
+            line = line.strip(i)
+    return(line[0])
+# Ask for String to check
+line = input("Input a string to to check for first repeating and non repeating characters: \n")
+print("The first repeating character is '" + repeatCheck(line) +"'!")
+print("The first non-repeating character is '" + noRepeat(line) +"'!")
