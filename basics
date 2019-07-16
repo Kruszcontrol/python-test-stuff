@@ -12,11 +12,10 @@ def repeatCheck(line):
 
 # Function to test for the first character in a string that does not repeat.
 def noRepeat(line):
-    x = line
     for i in line:
         if not line:
             return("NA")
-        elif x.count(i) >= 2:
+        elif line.count(i) >= 2:
             line = line.strip(i)
     return(line[0])
 # Ask for String to check
