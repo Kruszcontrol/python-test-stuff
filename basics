@@ -7,18 +7,24 @@ def repeatCheck(line):
         if x.count(i) == 2:
             return(i)
         else:
-            i = "NA"
+            i = None
     return(i)
 
 # Function to test for the first character in a string that does not repeat.
 def noRepeat(line):
     for i in line:
         if not line:
-            return("NA")
+            return(None)
         elif line.count(i) >= 2:
             line = line.strip(i)
     return(line[0])
 # Ask for String to check
 line = input("Input a string to to check for first repeating and non repeating characters: \n")
-print("The first repeating character is '" + repeatCheck(line) +"'!")
-print("The first non-repeating character is '" + noRepeat(line) +"'!")
+if repeatCheck(line):
+    print("The first repeating character is '" + repeatCheck(line) +"'!")
+else:
+        print("There are no repeating characters.")
+if noRepeat(line):
+    print("The first non-repeating character is '" + noRepeat(line) +"'!")
+else:
+         print("There are no non-repeating characters.")
